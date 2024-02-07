@@ -1,0 +1,156 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto+Slab&display=swap");
+
+body,
+button {
+	font-family: "Roboto Slab", serif;
+}
+
+:root {
+	--firstcolor: #1c1d20;
+	--seccolor: #f9f871;
+	--thirdcolor: #9fa0a2;
+
+	--offcanvas-width: 180px;
+	--topNavbarHeight: 80px;
+}
+
+body{
+	background: #00000093 url("../img/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.mybg-dark {
+	padding: min(7%, 3.125rem);
+
+	background-color: var(--firstcolor);
+}
+
+.sidebar-nav {
+	width: var(--offcanvas-width);
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.sidebar-link {
+	display: flex;
+	align-items: center;
+}
+
+.sidebar-link .right-icon {
+	display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+	transform: rotate(180deg);
+}
+
+table#datatable tbody tr {
+	background-color: #9fa0a2;
+}
+
+table#datatable tbody > tr.odd {
+	background-color: #f9f871;
+}
+
+table#datatable tbody tr:hover,
+table#datatable.table-striped > tbody > tr.odd:hover {
+	background-color: #fbfdd5;
+}
+
+.form_login {
+	background-color: #fff;
+}
+
+.h-custom label,
+.h-custom .signinheader {
+	color: #000;
+}
+
+.login_btn {
+	color: #fff;
+	background-color: #1c1d20;
+
+	transition: all 500ms linear;
+}
+
+.login_btn:hover {
+	background-color: #999;
+}
+
+.editsection .form-control {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 0;
+	background: none;
+}
+
+.editsection .form-control:active,
+.editsection .form-control:focus {
+	outline: none;
+	-webkit-box-shadow: none;
+
+	box-shadow: none;
+	border-color: #000;
+}
+
+.editsection .col-form-label {
+	color: #000;
+	font-size: 13px;
+}
+
+.editsection .content_contact .btn,
+.editsection .form-control {
+	height: 45px;
+}
+
+.editsection input::-webkit-outer-spin-button,
+.editsection input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.editsection input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.textaera1 {
+	height: 200px;
+}
+
+@media (min-width: 992px) {
+	body {
+		overflow: auto !important;
+	}
+
+	main {
+		margin-left: var(--offcanvas-width);
+	}
+
+	/* this is to remove the backdrop */
+	.offcanvas-backdrop::before {
+		display: none;
+	}
+
+	.sidebar-nav {
+		-webkit-transform: none;
+		transform: none;
+		visibility: visible !important;
+		height: calc(100% - var(--topNavbarHeight));
+		top: var(--topNavbarHeight);
+	}
+}
+
+#datatable .product_img {
+	height: 150px;
+
+	object-fit: contain;
+}

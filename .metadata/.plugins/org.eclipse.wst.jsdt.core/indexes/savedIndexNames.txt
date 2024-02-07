@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\Users\hlain\ass\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1125693709.index
+4243978933.index
+323342310.index
+1006809486.index
+1127803926.index
+142538532.index
+2117736249.index
+2386718316.index

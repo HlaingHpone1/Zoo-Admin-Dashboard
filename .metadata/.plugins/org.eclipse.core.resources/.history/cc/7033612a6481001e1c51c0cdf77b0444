@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+        <%@ page import="com.csm.DBManager" %>
+    <%@ page import="com.csm.action.Animals" %>
+    <%@ page import="com.csm.manager.AnimalsManager" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+				String animalName = request.getParameter("animal_name");
+				String yearOfArrivel = request.getParameter("year_of_arrival");
+				int gender = Integer.parseInt(request.getParameter("gender"));
+				int keeperID = Integer.parseInt(request.getParameter("keeper_id"));
+				int enclosureID = Integer.parseInt(request.getParameter("enclosure_id"));
+				int specieID = Integer.parseInt(request.getParameter("specie_id"));
+				int dietID = Integer.parseInt(request.getParameter("diet_id"));
+				
+				AnimalsManager animalM = new AnimalsManager();
+				Animals a = new Animals(animalName, gender, yearOfArrivel, keeperID, enclosureID, specieID, dietID);
+				int rowsAffected;
+	            try {
+	            	out.println(animalName);
+
+	                rowsAffected = dao.update(a);
+	                out.println("Your updating process is successful done.. " + rowsAffected);
+
+	             }catch (ClassNotFoundException ex){
+	                  out.println( ex.getMessage());
+
+	              }catch (SQLException e){
+	                  out.println(e.getMessage());
+
+	              }
+			%>
+</body>
+</html>
